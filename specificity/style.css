@@ -1,0 +1,19 @@
+.red-paragraphs {
+    color: red;
+    font-style: italic;    
+}
+
+.firstDiv p {
+    color: blue;
+    font-weight: bold;
+}
+
+.lastDiv p:first-child {
+    background-color: yellow;
+    font-size: 20px;
+}
+
+.lastDiv p:last-child {
+    font-family: courier;
+    font-size: 14px;
+}

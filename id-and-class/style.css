@@ -1,0 +1,9 @@
+#top {
+    background-color: #ccc;
+    padding: 20px
+}
+
+p.intro {
+    color: red;
+    font-weight: bold;
+}
