@@ -1,0 +1,33 @@
+a {
+    display: block;
+    margin: 5px 0;
+}
+
+nav {
+    float: left;
+    width: 100px;
+}
+
+article {
+    margin-left: 100px;
+}
+
+@media screen and (max-width: 800px) {
+    nav {
+        float: none;
+    }
+
+    article {
+        margin: 0 20px;
+    }
+
+    nav {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline;
+    }
+}
