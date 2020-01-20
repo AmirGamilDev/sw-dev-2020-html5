@@ -1,0 +1,12 @@
+#genus_examples > li { border: 1px solid red;}
+
+a:link {
+    transition: all .5s linear 0;
+    font-size: 20px;
+    color: hsl(120,50%,50%);
+}
+
+a:hover {
+    color: hsl(0,100%,50%);
+    font-size: 36px;
+}
