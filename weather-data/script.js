@@ -12,9 +12,9 @@ window.addEventListener("load", function(event) {
 	if (geolocation) {
 		try {
 			geolocation.getCurrentPosition(
-                successCallback,
-                errorCallback
-		);
+                geolocationSuccess,
+                geolocationError
+		)
 		} catch (err) {
             console.log(err.message);
 
@@ -83,13 +83,13 @@ function kelvinToCelsius(kelvin) {
     return kelvin - 273.15;
 }
 
-function successCallback(location) {
+function geolocationSuccess(location) {
 	coords.innerHTML = "<p>Latitude: " + location.coords.latitude.toFixed(2) + "</p>";
 	coords.innerHTML += "<p>Longitude: " +	location.coords.longitude.toFixed(2) + "</p>";
 
 	loadWeather(location.coords.latitude, location.coords.longitude);
  }
 
- function errorCallback() {
+ function geolocationError() {
 	coords.innerHTML = '<p>There was an error looking up your position</p>';
  }
