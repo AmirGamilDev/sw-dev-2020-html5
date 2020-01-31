@@ -13,9 +13,8 @@ window.addEventListener("load", function(event) {
 		try {
 			geolocation.getCurrentPosition(
                 geolocationSuccess,
-                geolocationError
-		)
-		} catch (err) {
+                geolocationError);
+        } catch (err) {
             console.log(err.message);
 
 			coords.innerHTML = '<p>Error</p>';
@@ -25,6 +24,17 @@ window.addEventListener("load", function(event) {
 	}
 });
 
+function geolocationSuccess(location) {
+	coords.innerHTML = "<p>Latitude: " + location.coords.latitude.toFixed(2) + "</p>";
+	coords.innerHTML += "<p>Longitude: " +	location.coords.longitude.toFixed(2) + "</p>";
+
+	loadWeather(location.coords.latitude, location.coords.longitude);
+ }
+
+ function geolocationError() {
+	coords.innerHTML = '<p>There was an error looking up your position</p>';
+ }
+
 function loadJson(url, data, callback) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", url, true);
@@ -32,6 +42,10 @@ function loadJson(url, data, callback) {
 	xhr.onload = function() {
 		callback( JSON.parse(xhr.responseText) );
 	}
+
+    xhr.onerror = function(error) {
+        console.log("Something bad happened: " + error);
+    }
 
 	xhr.send( JSON.stringify(data) );
 }
@@ -82,14 +96,3 @@ function showForecastData(data) {
 function kelvinToCelsius(kelvin) {
     return kelvin - 273.15;
 }
-
-function geolocationSuccess(location) {
-	coords.innerHTML = "<p>Latitude: " + location.coords.latitude.toFixed(2) + "</p>";
-	coords.innerHTML += "<p>Longitude: " +	location.coords.longitude.toFixed(2) + "</p>";
-
-	loadWeather(location.coords.latitude, location.coords.longitude);
- }
-
- function geolocationError() {
-	coords.innerHTML = '<p>There was an error looking up your position</p>';
- }
