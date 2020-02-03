@@ -1,0 +1,6 @@
+When opening on mobile device, must use following path in address bar in order for CSS and JS
+to be sourced correctly.  i.e. DO NOT attempt to open using a file explorer!!
+file:///<path-to-index.html>
+
+e.g.
+file:///storage/emulated/0/Download/touch-events/index.html
