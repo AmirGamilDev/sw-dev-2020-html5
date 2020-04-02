@@ -4,12 +4,14 @@ function Player(name, score, lives) {
     this.numberOfLives = lives
 
     // this can be done - but performance & memory is slightly worse than
-    // using the prototype method below
+    // using the prototype method below as each Player instance will have
+    // its own copy of the function
 //    this.increaseScore = function() {
 //        this.score += 10;
 //    }
 }
 
+// this function is shared across all Player instances
 Player.prototype.increaseScore = function() {
     this.score += 10;
 }
