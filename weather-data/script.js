@@ -4,7 +4,7 @@ const WEATHER_ENDPOINT = "/weather";
 
 const FORECAST_ENDPOINT = "/forecast";
 
-const APP_ID = "8097f3f7cfb0a07b8001162728cfd6cd";
+const APP_ID = "<INSERT-OWN-APP-ID-HERE>";
 
 window.addEventListener("load", function(event) {
     var geolocation = navigator.geolocation;
